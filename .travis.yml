@@ -1,7 +1,5 @@
-sudo: required
+sudo: false
 services:
     - docker
-before_install:
+script:
     - docker build -t currency-exchange-service:latest -f Dockerfile.dev .
-#script:
-#    - docker run -p 18081:8001 -t -i currency-exchange-service
