@@ -1,5 +1,9 @@
-sudo: false
+sudo: true
 services:
     - docker
 script:
     - docker build -t currency-exchange-service:latest -f Dockerfile.dev .
+    
+#language: java
+#sudo: false
+#script: mvn clean verify
