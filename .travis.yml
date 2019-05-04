@@ -7,3 +7,16 @@ script:
 #language: java
 #sudo: false
 #script: mvn clean verify
+
+deploy:
+	provider: "elasticbeanstalk"
+	region: "us-east-2"
+	app: "mattiz-restful"
+	env: "MattizRestful-env"
+	bucket_name: "elasticbeanstalk-us-east-2-066501592116"
+	bucket_path: "mattiz-restful"
+	on:
+		branch: master
+	access_key_id: $AWS_ACCESS_KEY
+	secret_access_key: 
+		secure: "$AWS_SECRET_KEY"
